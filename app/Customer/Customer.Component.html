@@ -1,0 +1,21 @@
+<table style="width:50%">
+    <thead>
+        <th>ID</th>
+        <th>Name</th>
+        <th>ProductCost</th>
+        <th>PhoneNumber</th>
+        <th>DOB</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let cus of Customers">
+             <td>{{cus.pid}}</td>
+             <td>{{cus.Name | uppercase}}</td>
+             <td>{{cus.ProductCost | currency:'INR':true}}</td>
+             <td>{{cus.PhoneNumber}}</td>
+             <td>{{cus.dob |date:'fullDate' | uppercase}}</td>
+        </tr>
+        <tr *ngIf="Customers.length==0">
+            <td colspan="5">No data found</td>
+        </tr>
+    </tbody>
+</table>
